@@ -7,16 +7,34 @@ var currentMoment= moment();
 
 // get today's date and display  "day of week, month date year, time am/pm"
 var now = currentMoment.format("dddd, MMMM Do YYYY, h:mm:ss a"); 
-
+console.log (now) ; 
 // display currenttime in "currentDay" in html
 
-var dateDisplay =  $("#currentDay") 
+var dateDisplay =  $("#currentDay"); 
 dateDisplay.text(now);
 
 
 var currentHour = parseInt(currentMoment.format("H")); 
-var currentHourtwo = currentMoment.hour(); 
-console.log( currentHour, currentHourtwo ); 
+// var currentHourtwo = currentMoment.hour(); 
+console.log( currentHour ) ; 
+
+// saveButton // save it by clicking the icon 
+var saveBtn = $("<i>"); 
+
+// save text from textarea when saveicon is clicked 
+$(document).on('click', 'i', function(event){
+
+    event.preventDefault(); 
+   
+
+
+}); 
+
+
+// if (currentHour = )
+
+// for (let index )
+
 // For  Loop pver the hours of the day from 9am to 5pm 
 //   i = 9 to i <= 17 
 
@@ -43,6 +61,17 @@ console.log( currentHour, currentHourtwo );
 // When the user clicks a save button 
 
 // than i need to save the associated text for the associated user 
+// get the current hour from the 'event.target' ( the clicked button)
 
-event.target
+// var theClickedHour = $(event.target).parent().attr("id"); 
+
+// getting value and save from testarea 
+
+// var value = $(event.target).prev().val(); 
+
+// and store in local storage
+
+// localStorage.setItem("hour-" + theClickedHour, value ) ; 
+// making keyname unique is important !! prevent conflict 
+
 
