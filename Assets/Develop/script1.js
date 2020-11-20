@@ -16,9 +16,41 @@ console.log( currentHour ) ;
 
 const saveBtn = $("<i>"); 
 
-$(function(){ 
+$(function() { 
 
+// Looping thru hours and change colors by adding class 
+// **** NEED TO FIX TO 17 
+    for (let hourIndex = 9; hourIndex <= 23; hourIndex++){
+        // console.log(currentHour); 
+        // console.log(hourIndex); 
+        const currentHourIndex = $(`#hours${hourIndex}`).data('hour'); 
+        //currentHourIndex is data-hour value of #hours + hourIndex 
+        // console.log(`#hours${hourIndex}`); 
+        // console.log(currentHourIndex); 
+        if ( currentHour > currentHourIndex ) { 
+            $(`#hours${hourIndex}`).addClass("past"); 
+        }
+        else if ( currentHour == currentHourIndex ) { 
+            $(`#hours${hourIndex}`).addClass("present"); 
+        }
+        else if ( currentHour < currentHourIndex ) { 
+            $(`#hours${hourIndex}`).addClass("future"); 
+        }
+
+    }
+    // Looping thru eventIndex that was saved in localStorage 
+    // and render it on html with matching hourindex
+    for ( let eventIndex = 9; eventIndex <= 23; eventIndex++){
+        let savedEvent = localStorage.getItem(`hour-${eventIndex}`); 
+        $(`#hours${eventIndex}`).text(savedEvent); 
     
 
+        
 
-}
+        
+
+        
+
+    }
+
+})
